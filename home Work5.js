@@ -6,13 +6,13 @@ example:
  [ 'a', 0, 0, 'b', null, 'c', 'd', 0, 1, false, 0, 1, 0, 3, [], 0, 1, 9, 0, 0, {}, 0, 0, 9 ] => ["a","b",null,"c","d",1,false,1,3,[],1,9,{},9,0,0,0,0,0,0,0,0,0,0]
  [ 0, 1, null, 2, false, 1, 0 ] => [1,null,2,false,1,0,0]
 */
-//работает не корректно при повторении нулей ??
+
 
  var arr = [1,false,2,0,3,null,0,4,0,25];
 var arr = [ 'a', 0, 0, 'b', null, 'c', 'd', 0, 1, false, 0, 1, 0, 3, [], 0, 1, 9, 0, 0, {}, 0, 0, 9 ]; //var arr = [ 0, 1, null, 2, false, 1, 0 ];
 
 var newArr = [];
-for (let i = 0; i < arr.length; i++ ){
+for (let i = arr.length; i--; ){
 	if (arr[i] === 0){
 		arr.splice(i, 1) ;
 		   newArr.push(0) ;
