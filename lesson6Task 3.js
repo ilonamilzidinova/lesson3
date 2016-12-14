@@ -5,7 +5,7 @@
  * */
 function wordCounter(string) { 
 string = string.split(' '), 
-arr = []; 
+arr = {}; 
 for(var i = 0; i < string.length; i++){ 
 if(arr[string[i]]){ 
 arr[string[i]] = arr[string[i]] + 1; 
