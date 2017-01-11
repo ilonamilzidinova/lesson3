@@ -28,3 +28,50 @@ console.log(userAuth.showName()); // logged
 console.log(realUser.showName()); //Santa
 
 console.log(realUser.showName.call(userAuth)); // logged
+
+
+function MagicCreatures(type){
+ this.type = type;
+}
+
+MagicCreatures.prototype.doMagic = function() {
+	if ( this.castSpell) {
+		this.castSpell()
+	} else  {
+	console.log('Hello Human!');
+ }
+};
+
+function Moroz(type) {
+	this.type = type;
+	this.castSpell = () => {
+		console.log('YO HO HO');
+	}
+}
+Moroz.prototype = Object.create(MagicCreatures.prototype);
+//Moroz.prototype = new MagicCreatures();
+
+function Human(type, name) {
+	this.type = type;
+	this.name = name;
+}
+
+Human.prototype = new MagicCreatures();
+
+var SantaClaus = new Moroz('Moroz');
+var dedMoroz = new Moroz('Moroz');
+var Jessica = new Human('Human');
+var Jack = new Human('Human');
+
+
+
+dedMoroz.doMagic()
+Jessica.doMagic()
+*/
+/*
+* Создать функцию конструктор Human
+
+type: string
+name: string
+
+Дочерние классы (Экземпляры) - должны уметь вызывать функцию doMagic
