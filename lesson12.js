@@ -75,3 +75,27 @@ type: string
 name: string
 
 Дочерние классы (Экземпляры) - должны уметь вызывать функцию doMagic
+
+
+
+
+
+/*функцию конструктор Computer
+
+*/
+function Computer(){
+	this.start = function start(fn){
+		fn()
+		return this
+	};
+	this.stop = stop;
+}
+
+var myPC = new Computer().start(function(){
+//в момент срaбатывания метода stop, вызвать эту функцию
+
+
+
+	console.log('Start')
+	
+}).stop();
